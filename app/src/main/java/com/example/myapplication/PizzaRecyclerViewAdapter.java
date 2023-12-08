@@ -48,19 +48,10 @@ public class PizzaRecyclerViewAdapter extends RecyclerView.Adapter<PizzaRecycler
 
         ImageView imageView;
         TextView tvName, tvToppings;
-        NumberPicker np;
-
         Button btn;
 
         public MyViewHolder(@NonNull View itemView, RecyclerViewInterface recyclerViewInterface) {
             super(itemView);
-
-            MainActivity instance = MainActivity.getInstance();
-
-//            np = itemView.findViewById(R.id.quantityPicker);
-//            np.setMaxValue(20);
-//            np.setMinValue(0);
-//            np.setValue(0);
 
             imageView = itemView.findViewById(R.id.imageView);
             tvName = itemView.findViewById(R.id.name);
