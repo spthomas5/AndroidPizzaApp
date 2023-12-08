@@ -57,10 +57,10 @@ public class PizzaRecyclerViewAdapter extends RecyclerView.Adapter<PizzaRecycler
 
             MainActivity instance = MainActivity.getInstance();
 
-            np = itemView.findViewById(R.id.quantityPicker);
-            np.setMaxValue(20);
-            np.setMinValue(0);
-            np.setValue(0);
+//            np = itemView.findViewById(R.id.quantityPicker);
+//            np.setMaxValue(20);
+//            np.setMinValue(0);
+//            np.setValue(0);
 
             imageView = itemView.findViewById(R.id.imageView);
             tvName = itemView.findViewById(R.id.name);
