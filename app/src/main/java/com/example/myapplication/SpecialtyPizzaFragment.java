@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,7 +13,7 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
-public class SpecialtyPizzaFragment extends Fragment {
+public class SpecialtyPizzaFragment extends Fragment implements RecyclerViewInterface{
 
     ArrayList<PizzaModel> pizzaModels = new ArrayList<PizzaModel>();
     int[] pizzaImages = {R.drawable.deluxe, R.drawable.supreme, R.drawable.meatza, R.drawable.seafood, R.drawable.pizzapep};
@@ -42,7 +43,7 @@ public class SpecialtyPizzaFragment extends Fragment {
         RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerViewSpecialtyPizza);
 
         setUpPizzaModels();
-        PizzaRecyclerViewAdapter adapter = new PizzaRecyclerViewAdapter(requireContext(), pizzaModels);
+        PizzaRecyclerViewAdapter adapter = new PizzaRecyclerViewAdapter(requireContext(), pizzaModels, this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
 
@@ -50,4 +51,14 @@ public class SpecialtyPizzaFragment extends Fragment {
     }
 
 
+    @Override
+    public void onItemClick(int position) {
+        Intent intent = new Intent(getActivity(), SpecialtyActivity.class);
+
+        intent.putExtra("NAME", pizzaModels.get(position).getPizzaName());
+        intent.putExtra("TOPPINGS", pizzaModels.get(position).getToppings());
+        intent.putExtra("IMAGE", pizzaModels.get(position).getImage());
+
+        startActivity(intent);
+    }
 }
