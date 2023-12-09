@@ -41,7 +41,7 @@ public class Order {
      * 
      * @return the list of pizzas in the cart.
      */
-    public ArrayList<Pizza> getCart(Pizza pizza){
+    public ArrayList<Pizza> getCart(){
         return this.cart;
     }
 

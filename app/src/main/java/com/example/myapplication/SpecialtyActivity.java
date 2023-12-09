@@ -73,23 +73,27 @@ public class SpecialtyActivity extends AppCompatActivity {
             return;
         }
 
-        Pizza pizza = PizzaMaker.createPizza(name.toUpperCase());
-
-        String size = sizeSpinner.getSelectedItem().toString();
-        if (size.equals("Small")) {
-            pizza.setSize(Size.SMALL);
-        }
-        if (size.equals("Medium")) {
-            pizza.setSize(Size.MEDIUM);
-        }
-        if (size.equals("Large")){
-            pizza.setSize(Size.LARGE);
-        }
-        pizza.setExtraCheese(cbCheese.isActivated());
-        pizza.setExtraSauce(cbSauce.isActivated());
 
         MainActivity instance = MainActivity.getInstance();
-        instance.addToCart(pizza);
+        for (int i = 0; i < np.getValue(); i++) {
+            Pizza pizza = PizzaMaker.createPizza(name.toUpperCase());
+
+            String size = sizeSpinner.getSelectedItem().toString();
+            if (size.equals("Small")) {
+                pizza.setSize(Size.SMALL);
+            }
+            if (size.equals("Medium")) {
+                pizza.setSize(Size.MEDIUM);
+            }
+            if (size.equals("Large")){
+                pizza.setSize(Size.LARGE);
+            }
+            pizza.setExtraCheese(cbCheese.isActivated());
+            pizza.setExtraSauce(cbSauce.isActivated());
+            instance.addToCart(pizza);
+        }
+
+
         Toast.makeText(this, "Added to cart!", Toast.LENGTH_SHORT).show();
     }
 
