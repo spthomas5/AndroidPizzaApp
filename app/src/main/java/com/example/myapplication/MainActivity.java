@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 System.out.println("view order");
-                Intent intent = new Intent(MainActivity.this, OrderActivity.class);
+                Intent intent = new Intent(MainActivity.this, ViewOrdersActivity.class);
                 startActivity(intent);
             }
         });

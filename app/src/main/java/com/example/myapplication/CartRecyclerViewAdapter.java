@@ -26,7 +26,7 @@ public class CartRecyclerViewAdapter extends RecyclerView.Adapter<CartRecyclerVi
     public CartRecyclerViewAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.cart_recycler_view_row, parent, false);
-        return new CartRecyclerViewAdapter.MyViewHolder(view);
+        return new CartRecyclerViewAdapter.MyViewHolder(view, this);
     }
 
     @Override
@@ -38,6 +38,8 @@ public class CartRecyclerViewAdapter extends RecyclerView.Adapter<CartRecyclerVi
             toppings = t.name().substring(0, 1).toUpperCase() + t.name().substring(1).toLowerCase();
         }
         holder.tvToppings.setText(toppings);
+
+
     }
 
     @Override
@@ -45,24 +47,30 @@ public class CartRecyclerViewAdapter extends RecyclerView.Adapter<CartRecyclerVi
         return cart.size();
     }
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder {
+    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         TextView tvName, tvToppings;
         Button btn;
+        CartRecyclerViewAdapter adapter;
 
-        public MyViewHolder(@NonNull View itemView) {
+        public MyViewHolder(@NonNull View itemView, CartRecyclerViewAdapter adapter) {
+
             super(itemView);
 
 //            imageView = itemView.findViewById(R.id.imageView);
             tvName = itemView.findViewById(R.id.name);
             tvToppings = itemView.findViewById(R.id.toppings);
-//            btn = itemView.findViewById(R.id.submit);
+            btn = itemView.findViewById(R.id.button);
 
+            btn.setOnClickListener(this);
 
         }
 
-        public void submit() {
-
+        @Override
+        public void onClick(@NonNull View itemView) {
+            int position = getAdapterPosition();
+            MainActivity.getInstance().getOrder().getCart().remove(position);
+            notifyItemRemoved(position);
         }
     }
 }
