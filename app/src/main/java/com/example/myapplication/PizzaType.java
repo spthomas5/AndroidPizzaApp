@@ -13,6 +13,11 @@ public enum PizzaType {
     MEATZZA,
     SEAFOOD,
     PEPPERONI,
+        SEAN_ADAM,
+        SHRIMP,
+VEGGIE,
+        ITALIANO,
+        FIRE,
     BYO;
 
     /**

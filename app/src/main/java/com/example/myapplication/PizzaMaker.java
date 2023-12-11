@@ -21,6 +21,13 @@ public class PizzaMaker {
             case SEAFOOD -> new Seafood();
             case PEPPERONI -> new Pepperoni();
             case BYO -> new BuildYourOwn();
+
+            case SEAN_ADAM -> new SeanAdam();
+            case SHRIMP -> new Shrimp();
+            case VEGGIE -> new Veggie();
+            case ITALIANO -> new Italiano();
+            case FIRE -> new Fire();
+
         };
         return pizza;
     }
