@@ -21,6 +21,7 @@ public class ViewCartFragment extends Fragment {
     ArrayList<Pizza> cart = MainActivity.getInstance().getOrder().getCart();
 
     CartRecyclerViewAdapter adapter;
+    Button btn;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,7 @@ public class ViewCartFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
+        if (!cart.isEmpty()) {btn.setVisibility(View.VISIBLE);}
 
         adapter.notifyDataSetChanged();
     }
@@ -46,7 +48,7 @@ public class ViewCartFragment extends Fragment {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
 
-        Button btn = rootView.findViewById(R.id.button);
+        btn = rootView.findViewById(R.id.button);
         if (cart.isEmpty()) {btn.setVisibility(View.GONE);}
 
         btn.setOnClickListener(e -> {
