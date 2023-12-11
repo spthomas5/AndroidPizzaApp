@@ -1,11 +1,34 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">RU Pizza</string>
+
     <string name="title_activity_main2">MainActivity2</string>
+
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <string name="new_order">New Order</string>
+    <string name="view_orders">View Orders</string>
+
+    <string name="onions">Onions</string>
+    <string name="crab">Crab</string>
+    <string name="chicken">Chicken</string>
+    <string name="beef">Beef</string>
+    <string name="ham">Ham</string>
+    <string name="jalapeno">Jalapeno</string>
+    <string name="fish">Fish</string>
+    <string name="mushrooms">Mushrooms</string>
+    <string name="olives">Olives</string>
+    <string name="pepperoni">Pepperoni</string>
+    <string name="peppers">Peppers</string>
+    <string name="sausages">Sausages</string>
+    <string name="shrimp">Shrimp</string>
+    <string name="squid">Squid</string>
+
+    <string name="extra_cheese">Extra Cheese</string>
+    <string name="extra_sauce">Extra Sauce</string>
+    <string name="submit">Submit</string>
 
     <string-array name="pizza_name">
         <item>Deluxe</item>

@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "Button clicked", Toast.LENGTH_SHORT).show();
-                System.out.println("new order");
                 Intent intent = new Intent(MainActivity.this, OrderActivity.class);
                 startActivity(intent);
             }
@@ -44,13 +43,10 @@ public class MainActivity extends AppCompatActivity {
         viewOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("view order");
                 Intent intent = new Intent(MainActivity.this, ViewOrdersActivity.class);
                 startActivity(intent);
             }
         });
-
-
     }
 
     /**
@@ -95,12 +91,4 @@ public class MainActivity extends AppCompatActivity {
     public void addOrder(Order order) {
         this.storeOrders.addOrder(order);
     }
-
-
-
-//    public void click (View view) {
-//        Intent intent = new Intent(MainActivity.this, Order.class);
-//        startActivity(intent);
-//        System.out.println("switch");
-//    }
 }

@@ -46,8 +46,8 @@ public enum Topping {
             case SHRIMP -> "/images/shrimp.png";
             case CRAB_MEAT -> "/images/crab.png";
             case CHICKEN -> "/images/chick.png";
-            case JALAPENOS -> "/images/7ar.png";
-            case ANCHOVIES -> "/images/7outa.png";
+            case JALAPENOS -> "/images/har.png";
+            case ANCHOVIES -> "/images/houta.png";
             case SQUID -> "/images/squid.png";
         };
     }
