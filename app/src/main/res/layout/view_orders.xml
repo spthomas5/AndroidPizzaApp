@@ -7,14 +7,13 @@
     android:layout_height="match_parent"
     tools:context=".ViewOrdersActivity">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:id="@+id/textViewViewOrders"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
-        android:text="View Orders"
+        android:text="@string/view_orders"
         android:textAlignment="center"
         android:textSize="34sp"
         app:layout_constraintTop_toTopOf="parent"
