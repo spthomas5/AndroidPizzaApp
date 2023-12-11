@@ -28,6 +28,12 @@ public abstract class Pizza {
      */
     public abstract double price(); //polymorphism
 
+    /**
+     * Abstract method to get the name of a pizza
+     *
+     * @return the name of a pizza
+     */
+    public abstract String name(); //polymorphism
      /**
      * Sets the extra cheese option for the pizza.
      * 

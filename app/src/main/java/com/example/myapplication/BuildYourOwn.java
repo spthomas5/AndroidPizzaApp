@@ -20,6 +20,12 @@ public class BuildYourOwn extends Pizza{
                 + INCLUDED_TOPPINGS_PRICE
                 + ((double)(this.toppings.size() - NUM_INCLUDED_TOPPINGS)) * TOPPING_PRICE ;
     }
+
+    @Override
+    public String name() {
+        return "Custom Pizza";
+    }
+
     public BuildYourOwn(){
         this.toppings = new ArrayList<>();
     }

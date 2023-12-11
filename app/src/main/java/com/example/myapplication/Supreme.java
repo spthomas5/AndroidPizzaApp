@@ -33,4 +33,9 @@ public class Supreme extends Pizza{
     public double price() {
         return this.calculateFees() + 15.99;
     }
+
+    @Override
+    public String name() {
+        return "Supreme Pizza";
+    }
 }

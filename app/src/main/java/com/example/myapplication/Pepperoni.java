@@ -31,4 +31,9 @@ public class Pepperoni extends Pizza{
     public double price() {
         return this.calculateFees() + 10.99;
     }
+
+    @Override
+    public String name() {
+        return "Pepperoni Pizza";
+    }
 }

@@ -34,4 +34,9 @@ public class Meatzza extends Pizza{
     public double price() {
         return this.calculateFees() + 16.99;
     }
+
+    @Override
+    public String name() {
+        return "Meatzza";
+    }
 }

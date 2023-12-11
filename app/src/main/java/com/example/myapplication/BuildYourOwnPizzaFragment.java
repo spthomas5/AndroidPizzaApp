@@ -89,26 +89,7 @@ public class BuildYourOwnPizzaFragment extends Fragment {
     }
 
     private void submit(View root) {
-        Spinner sizeSpinner = root.findViewById(R.id.sizeSpinner);
-        String size = sizeSpinner.getSelectedItem().toString();
-        if (size.equals("Small")) {
-            pizza.setSize(Size.SMALL);
-        }
-        if (size.equals("Medium")) {
-            pizza.setSize(Size.MEDIUM);
-        }
-        if (size.equals("Large")){
-            pizza.setSize(Size.LARGE);
-        }
-        Spinner sauceSpinner = root.findViewById(R.id.sauceSpinner);
-        String sauce = sauceSpinner.getSelectedItem().toString();
-        if (sauce.equals("Tomato")) {
-            pizza.setSauce(Sauce.TOMATO);
-        }
-        if (size.equals("Alfredo")) {
-            pizza.setSauce(Sauce.ALFREDO);
-        }
-
+        submitSizeSauce(root);
         CheckBox cbCheese = root.findViewById(R.id.extraCheese);
         CheckBox cbSauce = root.findViewById(R.id.extraSauce);
         pizza.setExtraCheese(cbCheese.isActivated());
@@ -132,6 +113,28 @@ public class BuildYourOwnPizzaFragment extends Fragment {
         instance.addToCart(pizza);
         Toast.makeText(root.getContext(), "Added to cart!", Toast.LENGTH_SHORT).show();
         pizza = PizzaMaker.createPizza("BYO");
+    }
+
+    private void submitSizeSauce(View root) {
+        Spinner sizeSpinner = root.findViewById(R.id.sizeSpinner);
+        String size = sizeSpinner.getSelectedItem().toString();
+        if (size.equals("Small")) {
+            pizza.setSize(Size.SMALL);
+        }
+        if (size.equals("Medium")) {
+            pizza.setSize(Size.MEDIUM);
+        }
+        if (size.equals("Large")){
+            pizza.setSize(Size.LARGE);
+        }
+        Spinner sauceSpinner = root.findViewById(R.id.sauceSpinner);
+        String sauce = sauceSpinner.getSelectedItem().toString();
+        if (sauce.equals("Tomato")) {
+            pizza.setSauce(Sauce.TOMATO);
+        }
+        if (size.equals("Alfredo")) {
+            pizza.setSauce(Sauce.ALFREDO);
+        }
     }
 
     private  Topping getToppingFromCb(String text) {
