@@ -9,8 +9,11 @@ import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,6 +30,9 @@ public class BuildYourOwnPizzaFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private  Pair<CheckBox, ImageButton>[] pairArray;
+    private Pizza pizza;
 
     public BuildYourOwnPizzaFragment() {
         // Required empty public constructor
@@ -65,17 +71,86 @@ public class BuildYourOwnPizzaFragment extends Fragment {
                              Bundle savedInstanceState) {
         View root =  inflater.inflate(R.layout.fragment_build_your_own_pizza, container, false);
         // Inflate the layout for this fragment
+        pizza = PizzaMaker.createPizza("BYO");
 
-        Pair<CheckBox, ImageButton>[] pairArray = getPairs(root);
-
+        pairArray = getPairs(root);
         for (Pair<CheckBox, ImageButton> checkBoxImageButtonPair : pairArray) {
             checkBoxImageButtonPair.second.setOnClickListener(e ->{
                 checkBoxImageButtonPair.first.toggle();
             });
         }
 
+        Button submitButton = root.findViewById(R.id.submit);
+        submitButton.setOnClickListener(e ->{
+            submit(root);
+        });
 
         return root;
+    }
+
+    private void submit(View root) {
+        Spinner sizeSpinner = root.findViewById(R.id.sizeSpinner);
+        String size = sizeSpinner.getSelectedItem().toString();
+        if (size.equals("Small")) {
+            pizza.setSize(Size.SMALL);
+        }
+        if (size.equals("Medium")) {
+            pizza.setSize(Size.MEDIUM);
+        }
+        if (size.equals("Large")){
+            pizza.setSize(Size.LARGE);
+        }
+        Spinner sauceSpinner = root.findViewById(R.id.sauceSpinner);
+        String sauce = sauceSpinner.getSelectedItem().toString();
+        if (sauce.equals("Tomato")) {
+            pizza.setSauce(Sauce.TOMATO);
+        }
+        if (size.equals("Alfredo")) {
+            pizza.setSauce(Sauce.ALFREDO);
+        }
+
+        CheckBox cbCheese = root.findViewById(R.id.extraCheese);
+        CheckBox cbSauce = root.findViewById(R.id.extraSauce);
+        pizza.setExtraCheese(cbCheese.isActivated());
+        pizza.setExtraSauce(cbSauce.isActivated());
+
+        for (Pair<CheckBox, ImageButton> checkBoxImageButtonPair : pairArray) {
+                if ( checkBoxImageButtonPair.first.isChecked()){
+                    String text = (String) checkBoxImageButtonPair.first.getText();
+                    Topping topping = getToppingFromCb(text);
+                    pizza.addTopping(topping);
+                }
+        }
+
+        if (pizza.getToppings().size() < 3 || pizza.getToppings().size() > 7){
+            Toast.makeText(root.getContext(), "Toppings count should be between 3 and 7",
+                    Toast.LENGTH_SHORT).show();
+            pizza = PizzaMaker.createPizza("BYO");
+            return;
+        }
+        MainActivity instance = MainActivity.getInstance();
+        instance.addToCart(pizza);
+        Toast.makeText(root.getContext(), "Added to cart!", Toast.LENGTH_SHORT).show();
+        pizza = PizzaMaker.createPizza("BYO");
+    }
+
+    private  Topping getToppingFromCb(String text) {
+        Topping topping = null;
+        if (text.equals("Onions")){topping = Topping.ONION;}
+        else if (text.equals("Crab")){topping = Topping.CRAB_MEAT;}
+        else if (text.equals("Chicken")){topping = Topping.CHICKEN;}
+        else if (text.equals("Beef")){topping = Topping.BEEF;}
+        else if (text.equals("Ham")){topping = Topping.HAM;}
+        else if (text.equals("Jalapeno")){topping = Topping.JALAPENOS;}
+        else if (text.equals("Fish")){topping = Topping.ANCHOVIES;}
+        else if (text.equals("Mushrooms")){topping = Topping.MUSHROOM;}
+        else if (text.equals("Olives")){topping = Topping.BLACK_OLIVE;}
+        else if (text.equals("Pepperoni")){topping = Topping.PEPPERONI;}
+        else if (text.equals("Peppers")){topping = Topping.GREEN_PEPPER;}
+        else if (text.equals("Sausages")){topping = Topping.SAUSAGE;}
+        else if (text.equals("Shrimp")){topping = Topping.SHRIMP;}
+        else if (text.equals("Squid")){topping = Topping.SQUID;}
+        return topping;
     }
 
     @NonNull

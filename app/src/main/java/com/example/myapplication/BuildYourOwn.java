@@ -1,5 +1,7 @@
 package com.example.myapplication;
 
+import java.util.ArrayList;
+
 /**
  * Represents a Build Your Own pizza, which is a subclass of the Pizza class.
  * This class calculates the price of a Build Your Own pizza based on the number
@@ -17,5 +19,8 @@ public class BuildYourOwn extends Pizza{
         return this.calculateFees()
                 + INCLUDED_TOPPINGS_PRICE
                 + ((double)(this.toppings.size() - NUM_INCLUDED_TOPPINGS)) * TOPPING_PRICE ;
+    }
+    public BuildYourOwn(){
+        this.toppings = new ArrayList<>();
     }
 }

@@ -348,12 +348,11 @@
 
             <Spinner
                 android:id="@+id/sauceSpinner"
-                android:layout_width="427dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="1dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="9dp"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="273dp"
+                android:layout_height="38dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="20dp"
+                android:entries="@array/pizza_sizes"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout8" />
 
@@ -369,37 +368,36 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+                app:layout_constraintTop_toBottomOf="@+id/extra" />
 
             <Spinner
                 android:id="@+id/sizeSpinner"
-                android:layout_width="427dp"
-                android:layout_height="wrap_content"
+                android:layout_width="278dp"
+                android:layout_height="36dp"
                 android:layout_marginStart="1dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="9dp"
+                android:entries="@array/pizza_sauces"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.378"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/sauceSpinner" />
 
             <CheckBox
-                android:id="@+id/extraSauce"
+                android:id="@+id/extraCheese"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="35dp"
+                android:layout_marginStart="48dp"
                 android:layout_marginTop="2dp"
-                android:layout_marginEnd="280dp"
                 android:layout_marginBottom="135dp"
                 android:text="@string/extra_cheese"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/sizeSpinner"
                 app:layout_constraintVertical_bias="1.0" />
 
             <CheckBox
-                android:id="@+id/checkBox"
+                android:id="@+id/extraSauce"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="85dp"
@@ -407,7 +405,7 @@
                 android:layout_marginEnd="86dp"
                 android:text="@string/extra_sauce"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/extraSauce"
+                app:layout_constraintStart_toEndOf="@+id/extraCheese"
                 app:layout_constraintTop_toBottomOf="@+id/sizeSpinner" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
