@@ -22,7 +22,6 @@ public class SpecialtyActivity extends AppCompatActivity {
     Button btn;
     NumberPicker np;
     Spinner sizeSpinner;
-
     String name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +64,6 @@ public class SpecialtyActivity extends AppCompatActivity {
             Toast.makeText(this, "Value must be greater than 0", Toast.LENGTH_SHORT).show();
             return;
         }
-
 
         MainActivity instance = MainActivity.getInstance();
         for (int i = 0; i < np.getValue(); i++) {

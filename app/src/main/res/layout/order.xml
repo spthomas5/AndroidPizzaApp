@@ -16,19 +16,19 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Specialty Pizza"/>
+            android:text="@string/specialty_pizza"/>
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Build-Your-Own Pizza"/>
+            android:text="@string/build_your_own_pizza"/>
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="View Cart"/>
+            android:text="@string/view_cart"/>
     </com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager2.widget.ViewPager2

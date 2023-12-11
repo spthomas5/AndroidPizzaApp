@@ -18,17 +18,12 @@
             android:layout_width="match_parent"
             android:layout_height="217dp">
 
-            <!-- Original Views (Name, ImageView, Toppings) -->
-
-            <!-- New Views (Quantity, Size, Extra Sauce/Cheese) -->
-
-
             <TextView
                 android:id="@+id/name"
                 android:layout_width="347dp"
                 android:layout_height="27dp"
                 android:layout_marginTop="4dp"
-                android:text="Pepperoni"
+                android:text="@string/pepperoni"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +36,6 @@
                 android:layout_width="366dp"
                 android:layout_height="77dp"
                 android:layout_marginTop="8dp"
-                android:text="Toppings: Pepperoni"
                 android:textStyle="italic"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -54,7 +48,7 @@
                 android:layout_marginStart="21dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="305dp"
-                android:text="Remove"
+                android:text="@string/remove"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"

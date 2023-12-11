@@ -34,14 +34,6 @@ public class OrdersRecyclerViewAdapter extends RecyclerView.Adapter<OrdersRecycl
     @Override
     public void onBindViewHolder(@NonNull OrdersRecyclerViewAdapter.MyViewHolder holder, int position) {
         holder.order.setText(orders.get(position).toString());
-//        String toppings = "";
-//        for (Topping t : cart.get(position).getToppings()) {
-//            toppings += t.name().toLowerCase();
-//            toppings = t.name().substring(0, 1).toUpperCase() + t.name().substring(1).toLowerCase();
-//        }
-//        holder.tvToppings.setText(toppings);
-
-
     }
 
     @Override
@@ -71,9 +63,7 @@ public class OrdersRecyclerViewAdapter extends RecyclerView.Adapter<OrdersRecycl
             AlertDialog.Builder builder = new AlertDialog.Builder(context);
 
             builder.setMessage("Are you sure you want to delete this order?");
-
             builder.setTitle("Alert!");
-
             builder.setCancelable(false);
 
             builder.setPositiveButton("Yes", (DialogInterface.OnClickListener) (dialog, which) -> {
