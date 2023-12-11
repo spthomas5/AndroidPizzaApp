@@ -36,6 +36,11 @@
         <item>Meatzza</item>
         <item>Seafood</item>
         <item>Pepperoni</item>
+        <item>Italiano</item>
+        <item>Fire</item>
+        <item>Veggie</item>
+        <item>Shrimp</item>
+        <item>Sean_Adam</item>
     </string-array>
 
     <string-array name="toppings">
@@ -44,6 +49,11 @@
         <item>Toppings: Sausage, pepperoni, beef, ham</item>
         <item>Toppings: Shrimp, squid, crab, meats</item>
         <item>Toppings: Pepperoni</item>
+        <item>Toppings: Black olives, jalapeno, sausage</item>
+        <item>Toppings: Pepperoni, jalapeno, sausage</item>
+        <item>Toppings: Pepperoni, mushroom, onion</item>
+        <item>Toppings: Shrimp, crab meat, pepperoni</item>
+        <item>Toppings: Crab meat, chicken, beef, sausage</item>
     </string-array>
 
     <string-array name="pizza_sizes">

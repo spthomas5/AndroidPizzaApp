@@ -16,7 +16,9 @@ import java.util.ArrayList;
 public class SpecialtyPizzaFragment extends Fragment implements RecyclerViewInterface{
 
     ArrayList<PizzaModel> pizzaModels = new ArrayList<PizzaModel>();
-    int[] pizzaImages = {R.drawable.deluxe, R.drawable.supreme, R.drawable.meatza, R.drawable.seafood, R.drawable.pizzapep};
+    int[] pizzaImages = {R.drawable.deluxe, R.drawable.supreme, R.drawable.meatza,
+            R.drawable.seafood, R.drawable.pizzapep, R.drawable.italiano, R.drawable.fire,
+            R.drawable.veggie, R.drawable.shrimppizza, R.drawable.seanadam};
 
 
     @Override
