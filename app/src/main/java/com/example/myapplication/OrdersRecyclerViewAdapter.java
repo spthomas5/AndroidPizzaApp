@@ -1,6 +1,8 @@
 package com.example.myapplication;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,7 +51,7 @@ public class OrdersRecyclerViewAdapter extends RecyclerView.Adapter<OrdersRecycl
 
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
-        TextView order, cart;
+        TextView order;
         Button btn;
         OrdersRecyclerViewAdapter adapter;
 
@@ -57,20 +59,35 @@ public class OrdersRecyclerViewAdapter extends RecyclerView.Adapter<OrdersRecycl
 
             super(itemView);
 
-//            imageView = itemView.findViewById(R.id.imageView);
             order = itemView.findViewById(R.id.order);
-            cart = itemView.findViewById(R.id.cart);
             btn = itemView.findViewById(R.id.button);
 
             btn.setOnClickListener(this);
-
         }
 
         @Override
         public void onClick(@NonNull View itemView) {
-            int position = getAdapterPosition();
-            MainActivity.getInstance().getOrder().getCart().remove(position);
-            notifyItemRemoved(position);
+            // Create the object of AlertDialog Builder class
+            AlertDialog.Builder builder = new AlertDialog.Builder(context);
+
+            builder.setMessage("Are you sure you want to delete this order?");
+
+            builder.setTitle("Alert!");
+
+            builder.setCancelable(false);
+
+            builder.setPositiveButton("Yes", (DialogInterface.OnClickListener) (dialog, which) -> {
+                int position = getAdapterPosition();
+                MainActivity.getInstance().getStoreOrders().getOrders().remove(position);
+                notifyItemRemoved(position);
+            });
+
+            builder.setNegativeButton("No", (DialogInterface.OnClickListener) (dialog, which) -> {
+                dialog.cancel();
+            });
+
+            AlertDialog alertDialog = builder.create();
+            alertDialog.show();
         }
     }
 }
