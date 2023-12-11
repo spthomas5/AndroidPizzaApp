@@ -30,4 +30,9 @@ public class Seafood extends Pizza{
     public double price() {
         return this.calculateFees() + 17.99;
     }
+
+    @Override
+    public String name() {
+        return "Seafood Pizza";
+    }
 }

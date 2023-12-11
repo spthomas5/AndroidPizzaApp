@@ -40,4 +40,9 @@ public class Deluxe extends Pizza
     public double price() {
         return this.calculateFees() + 14.99;
     }
+
+    @Override
+    public String name() {
+        return "Deluxe Pizza";
+    }
 }

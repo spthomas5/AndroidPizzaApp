@@ -31,13 +31,8 @@ public class CartRecyclerViewAdapter extends RecyclerView.Adapter<CartRecyclerVi
 
     @Override
     public void onBindViewHolder(@NonNull CartRecyclerViewAdapter.MyViewHolder holder, int position) {
-        holder.tvName.setText(cart.get(position).getClass().getName().substring(26));
-        String toppings = "";
-        for (Topping t : cart.get(position).getToppings()) {
-            toppings += t.name().toLowerCase();
-            toppings = t.name().substring(0, 1).toUpperCase() + t.name().substring(1).toLowerCase();
-        }
-        holder.tvToppings.setText(toppings);
+        holder.tvName.setText(cart.get(position).name());
+        holder.tvToppings.setText(cart.get(position).toString());
 
 
     }
