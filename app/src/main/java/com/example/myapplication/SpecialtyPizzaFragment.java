@@ -61,6 +61,7 @@ public class SpecialtyPizzaFragment extends Fragment implements RecyclerViewInte
         intent.putExtra("NAME", pizzaModels.get(position).getPizzaName());
         intent.putExtra("TOPPINGS", pizzaModels.get(position).getToppings());
         intent.putExtra("IMAGE", pizzaModels.get(position).getImage());
+        intent.putExtra("BASE", pizzaModels.get(position).getBasePrice());
 
         startActivity(intent);
     }

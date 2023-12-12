@@ -43,18 +43,17 @@
 
             <TextView
                 android:id="@+id/toppings"
-                android:layout_width="0dp"
+                android:layout_width="382dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="52dp"
                 android:textStyle="italic"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
             <TextView
                 android:id="@+id/price"
-                android:layout_width="76dp"
+                android:layout_width="163dp"
                 android:layout_height="21dp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/toppings"

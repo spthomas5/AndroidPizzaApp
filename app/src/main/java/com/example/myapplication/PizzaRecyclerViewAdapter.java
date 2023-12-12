@@ -39,7 +39,7 @@ public class PizzaRecyclerViewAdapter extends RecyclerView.Adapter<PizzaRecycler
         holder.tvToppings.setText(pizzaModels.get(position).getToppings());
         holder.imageView.setImageResource(pizzaModels.get(position).getImage());
         double price = pizzaModels.get(position).getBasePrice();
-        holder.price.setText(String.valueOf(price) + "+");
+        holder.price.setText(String.format("Price: $%,.2f", price) + "+");
     }
 
     @Override
