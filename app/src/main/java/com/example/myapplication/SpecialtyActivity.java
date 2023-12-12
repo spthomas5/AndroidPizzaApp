@@ -125,8 +125,8 @@ public class SpecialtyActivity extends AppCompatActivity {
             if (size.equals("Large")){
                 pizza.setSize(Size.LARGE);
             }
-            pizza.setExtraCheese(cbCheese.isActivated());
-            pizza.setExtraSauce(cbSauce.isActivated());
+            pizza.setExtraCheese(cbCheese.isChecked());
+            pizza.setExtraSauce(cbSauce.isChecked());
             instance.addToCart(pizza);
         }
 

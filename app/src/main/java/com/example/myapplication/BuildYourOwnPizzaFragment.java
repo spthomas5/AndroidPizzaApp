@@ -92,8 +92,8 @@ public class BuildYourOwnPizzaFragment extends Fragment {
         submitSizeSauce(root);
         CheckBox cbCheese = root.findViewById(R.id.extraCheese);
         CheckBox cbSauce = root.findViewById(R.id.extraSauce);
-        pizza.setExtraCheese(cbCheese.isActivated());
-        pizza.setExtraSauce(cbSauce.isActivated());
+        pizza.setExtraCheese(cbCheese.isChecked());
+        pizza.setExtraSauce(cbSauce.isChecked());
 
         for (Pair<CheckBox, ImageButton> checkBoxImageButtonPair : pairArray) {
                 if ( checkBoxImageButtonPair.first.isChecked()){
