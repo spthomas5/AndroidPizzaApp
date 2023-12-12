@@ -20,6 +20,8 @@ public class SpecialtyPizzaFragment extends Fragment implements RecyclerViewInte
             R.drawable.seafood, R.drawable.pizzapep, R.drawable.italiano, R.drawable.fire,
             R.drawable.veggie, R.drawable.shrimppizza, R.drawable.seanadam};
 
+    double[] basePrices = {14.99, 15.99, 16.99, 17.99, 10.99, 5.99, 10.22, 7.99, 9.99, 6.90};
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -33,8 +35,7 @@ public class SpecialtyPizzaFragment extends Fragment implements RecyclerViewInte
         String[] toppings = getResources().getStringArray(R.array.toppings);
 
         for (int i = 0; i < pizzaNames.length; i++) {
-            pizzaModels.add(new PizzaModel(pizzaNames[i], toppings[i], pizzaImages[i]));
-
+            pizzaModels.add(new PizzaModel(pizzaNames[i], toppings[i], pizzaImages[i], basePrices[i]));
         }
     }
 

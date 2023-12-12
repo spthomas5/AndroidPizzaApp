@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class PizzaRecyclerViewAdapter extends RecyclerView.Adapter<PizzaRecyclerViewAdapter.MyViewHolder> {
     private final RecyclerViewInterface recyclerViewInterface;
@@ -37,6 +38,8 @@ public class PizzaRecyclerViewAdapter extends RecyclerView.Adapter<PizzaRecycler
         holder.tvName.setText(pizzaModels.get(position).getPizzaName());
         holder.tvToppings.setText(pizzaModels.get(position).getToppings());
         holder.imageView.setImageResource(pizzaModels.get(position).getImage());
+        double price = pizzaModels.get(position).getBasePrice();
+        holder.price.setText(String.valueOf(price) + "+");
     }
 
     @Override
@@ -47,7 +50,7 @@ public class PizzaRecyclerViewAdapter extends RecyclerView.Adapter<PizzaRecycler
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         ImageView imageView;
-        TextView tvName, tvToppings;
+        TextView tvName, tvToppings, price;
         Button btn;
 
         public MyViewHolder(@NonNull View itemView, RecyclerViewInterface recyclerViewInterface) {
@@ -56,6 +59,7 @@ public class PizzaRecyclerViewAdapter extends RecyclerView.Adapter<PizzaRecycler
             imageView = itemView.findViewById(R.id.imageView);
             tvName = itemView.findViewById(R.id.name);
             tvToppings = itemView.findViewById(R.id.toppings);
+            price = itemView.findViewById(R.id.price);
             btn = itemView.findViewById(R.id.submit);
 
             itemView.setOnClickListener(new View.OnClickListener() {

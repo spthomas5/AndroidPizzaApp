@@ -5,10 +5,13 @@ public class PizzaModel {
     String toppings;
     int image;
 
-    public PizzaModel(String pizzaName, String toppings, int image) {
+    double basePrice;
+
+    public PizzaModel(String pizzaName, String toppings, int image, double basePrice) {
         this.pizzaName = pizzaName;
         this.toppings = toppings;
         this.image = image;
+        this.basePrice = basePrice;
     }
 
     public String getPizzaName() {
@@ -21,5 +24,9 @@ public class PizzaModel {
 
     public int getImage() {
         return image;
+    }
+
+    public double getBasePrice() {
+        return basePrice;
     }
 }
