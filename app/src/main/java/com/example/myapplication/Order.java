@@ -15,6 +15,7 @@ import java.util.Arrays;
  */
 public class Order {
     private int id;
+    private static final double TAX_RATE = 0.06625;
 
     private ArrayList<Pizza> cart;
 
@@ -50,9 +51,13 @@ public class Order {
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder("Order #" + this.id + ":\n");
+        double total = 0.0;
         for (Pizza p : this.cart) {
+            total += p.price();
             result.append(p.toString()).append("\n");
         }
+        result.append("\n\nTotal Price: " + total + "\n\nTotal Price with Tax: "
+                + (total * (1+ TAX_RATE) ));
         return result.toString();
     }
 }
